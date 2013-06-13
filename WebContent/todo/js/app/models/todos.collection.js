@@ -12,6 +12,10 @@ define([
             this.add(todoModel);
         },
         
+        markAll: function(done) {
+            this.each(function(todo){ todo.save({done: done}); });
+        },
+        
     });
     
     return TodosCollection;
